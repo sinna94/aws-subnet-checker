@@ -1,0 +1,40 @@
+{
+  "name": "aws-subnet-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p .",
+    "package": "rm -rf output && pkg .",
+    "package-mac": "pkg --targets node12-macos-x64 .",
+    "package-linux": "pkg --targets node12-linux-x64 .",
+    "package-win": "pkg --targets node12-win-x64 .",
+    "build:package": "npm run build && npm run package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinna94/aws-subnet-checker.git"
+  },
+  "keywords": [
+    "aws"
+  ],
+  "author": "chunghyun Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinna94/aws-subnet-checker/issues"
+  },
+  "homepage": "https://github.com/sinna94/aws-subnet-checker#readme",
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1255.0",
+    "commander": "^9.4.1",
+    "pkg": "^5.8.0"
+  },
+  "bin": {"app": "./dist/main.js"},
+  "pkg":   {
+    "scripts": "dist/**/*.js",
+    "outputPath": "output"
+  }
+}
